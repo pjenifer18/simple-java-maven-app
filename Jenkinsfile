@@ -22,5 +22,15 @@ pipeline {
 
 			}
 		}
+        stage('Dockerpush') {
+            steps{
+
+                withCredentials([aws(credentialsId: 'aws-cli-creds', region: 'ap-southeast-1')]) {
+                    sh 'aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 314503617348.dkr.ecr.ap-southeast-1.amazonaws.com'
+                    sh 'sudo docker tag simplejavamaven:latest 314503617348.dkr.ecr.ap-southeast-1.amazonaws.com/simplejavamaven:latest'
+                    sh 'sudo docker push 314503617348.dkr.ecr.ap-southeast-1.amazonaws.com/simplejavamaven:latest'
+                }
+            }
+        }
     }
 }
