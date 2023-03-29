@@ -36,7 +36,7 @@ pipeline {
 			steps{
 
 				sh 'scp -i "/home/ec2-user/jenkins-jeni.pem" docker-compose.yml ec2-user@ec2-13-212-160-69.ap-southeast-1.compute.amazonaws.com:~/simplejavamaven'
-				sh 'ssh -i "/home/ec2-user/jenkins-jeni.pem" ec2-user@ec2-13-212-160-69.ap-southeast-1.compute.amazonaws.com "cd ~/simplejavamaven; sudo docker-compose up -d"'
+				sh 'ssh -i "/home/ec2-user/jenkins-jeni.pem" ec2-user@ec2-13-212-160-69.ap-southeast-1.compute.amazonaws.com "cd ~/simplejavamaven; aws ecr get-login-password --region ap-southeast-1 | sudo docker login --username AWS --password-stdin 314503617348.dkr.ecr.ap-southeast-1.amazonaws.com; sudo docker-compose up -d"'
 			}
 		}
     }
