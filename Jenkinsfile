@@ -13,7 +13,7 @@ pipeline {
         stage('Sonarscan') {
             steps{
 
-            sh '/home/ec2-user/sonar-scanner/sonar-scanner-4.8.0.2856-linux/bin/sonar-scanner -Dsonar.login=sqa_6ae7a164be5e03314cc5863341ce819243d05111'
+            sh '/home/ec2-user/sonar-scanner-4.8.0.2856-linux/bin/sonar-scanner -Dsonar.login=squ_e4230a928edac1efd6c361ce83f92cb0a2a1f7d1'
             }
         }
         stage('Dockerbuild'){
