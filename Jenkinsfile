@@ -8,9 +8,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-	    sh 'whoami'
-            sh 'which mvn'
-            sh 'mvn -B -DskipTests clean package'
+
+            sh '/opt/apache-maven-3.6.3/bin/mvn -B -DskipTests clean package'
             }
         }
         stage('Sonarscan') {
