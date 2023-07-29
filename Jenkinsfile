@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Dockerbuild'){
 			steps{
-					sh 'sudo docker build -t simplejavamaven .'
+					sh 'docker build -t simplejavamaven .'
 
 			}
 		}
