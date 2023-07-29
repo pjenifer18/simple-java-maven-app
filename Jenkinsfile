@@ -15,6 +15,7 @@ pipeline {
         }
         stage('Dockerbuild'){
 			steps{
+					sh 'whoami'
 					sh 'docker build -t simplejavamaven .'
 
 			}
