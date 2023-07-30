@@ -16,7 +16,7 @@ pipeline {
         stage('Dockerbuild'){
 			steps{
 					sh 'whoami'
-					sh 'docker build -t ec2-54-151-159-79.ap-southeast-1.compute.amazonaws.com:8081/repository/simplejavamaven .'
+					sh 'docker build -t ec2-54-151-159-79.ap-southeast-1.compute.amazonaws.com:5000/repository/simplejavamaven .'
 
 			}
 		}
